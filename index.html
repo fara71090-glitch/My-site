@@ -3,34 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BloxVocab Academy</title>
+    <title>BloxVocab Academy - Тренировки</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background: radial-gradient(circle at center, #1a1a2e 0%, #16213e 100%); color: white; font-family: sans-serif; min-h-screen }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        body { background-color: #121214; color: white; font-family: ui-sans-serif, system-ui, sans-serif; }
+        .card { background: #1e1e22; border: 1px solid #2d2d33; border-radius: 1.5rem; transition: all 0.3s; }
+        .card:hover { border-color: #6366f1; transform: translateY(-4px); }
+        .badge-green { background: #1a2e1a; color: #4ade80; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; }
+        .badge-orange { background: #2e231a; color: #fb923c; padding: 2px 10px; border-radius: 12px; font-size: 0.75rem; }
+        .btn-purple { background: #8b5cf6; width: 100%; padding: 10px; border-radius: 12px; font-weight: bold; margin-top: 15px; }
+        .sidebar { background: #18181b; border-radius: 1.5rem; padding: 20px; }
     </style>
 </head>
-<body class="min-h-screen">
-    <nav class="p-6 flex justify-between items-center glass m-4 rounded-2xl">
-        <div class="flex items-center gap-2">
-            <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center font-bold text-white">B</div>
-            <h1 class="text-xl font-bold italic">BloxVocab Academy</h1>
+<body class="p-4 md:p-8">
+    <header class="flex justify-between items-center mb-8">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center font-bold">B</div>
+            <h1 class="text-xl font-bold">BloxVocab <span class="text-blue-400">Academy</span></h1>
         </div>
-        <button class="glass px-4 py-2 rounded-xl text-sm">Kazakhstan Edition 🇰🇿</button>
-    </nav>
-    <main class="container mx-auto px-4 py-12 flex flex-col items-center text-center">
-        <div class="bg-blue-900/30 text-blue-300 px-4 py-1 rounded-full text-sm mb-6 border border-blue-500/30">Платформа для обучения английскому</div>
-        <h2 class="text-5xl md:text-7xl font-black mb-6 tracking-tight">Master <span class="text-blue-400">Roblox</span> English</h2>
-        <p class="text-gray-400 text-lg max-w-xl mb-10 leading-relaxed">Изучай английский язык через термины и ситуации из любимой игры. Твой путь к высокому уровню начинается здесь!</p>
-        <div class="flex flex-col md:flex-row gap-4">
-            <button class="bg-blue-500 hover:bg-blue-400 px-8 py-4 rounded-xl font-bold text-white transition transform hover:scale-105">Начать обучение</button>
-            <button class="glass px-8 py-4 rounded-xl font-bold hover:bg-white/10 transition">Открыть словарь</button>
+        <nav class="hidden md:flex gap-6 text-gray-400">
+            <a href="#" class="hover:text-white">Словарь</a>
+            <a href="#" class="text-blue-400 border-b-2 border-blue-400">Тренировки</a>
+            <a href="#" class="hover:text-white">Квизы</a>
+        </nav>
+        <button class="bg-zinc-800 px-4 py-2 rounded-xl text-sm">Профиль</button>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div class="lg:col-span-1 space-y-6">
+            <div class="sidebar border border-zinc-800">
+                <div class="flex justify-between mb-2"><span>Уровень</span> <span class="font-bold text-blue-400">2</span></div>
+                <div class="w-full bg-zinc-700 h-2 rounded-full mb-4"><div class="bg-blue-500 h-2 w-1/3 rounded-full"></div></div>
+                <div class="text-xs text-gray-500">600 очков до следующего уровня</div>
+            </div>
+            <div class="sidebar border border-zinc-800">
+                <div class="text-blue-400 text-sm mb-1">Очки</div>
+                <div class="text-3xl font-black tracking-widest">1400</div>
+            </div>
         </div>
-        <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-            <div class="glass p-6 rounded-3xl text-left"><div class="text-blue-400 mb-2">Уровень</div><div class="text-2xl font-bold uppercase">Beginner A2</div></div>
-            <div class="glass p-6 rounded-3xl text-left"><div class="text-blue-400 mb-2">Прогресс</div><div class="text-2xl font-bold uppercase">600 XP</div></div>
-            <div class="glass p-6 rounded-3xl text-left"><div class="text-blue-400 mb-2">Статус</div><div class="text-2xl font-bold uppercase">Active</div></div>
+
+        <div class="lg:col-span-3 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div class="card p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-3xl">🔗</span>
+                        <span class="badge-green">Новичок</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Соедини пары</h3>
+                    <p class="text-sm text-gray-400">Соедини английское слово с русским переводом</p>
+                </div>
+                <div>
+                    <div class="text-xs text-blue-400 mt-4">👤 50 очков</div>
+                    <button class="btn-purple" onclick="alert('Запуск тренировки...')">Начать</button>
+                </div>
+            </div>
+
+            <div class="card p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-3xl">💬</span>
+                        <span class="badge-orange">Средний</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Исправь чат</h3>
+                    <p class="text-sm text-gray-400">Найди и исправь ошибку в предложении из игрового чата</p>
+                </div>
+                <div>
+                    <div class="text-xs text-blue-400 mt-4">👤 75 очков</div>
+                    <button class="btn-purple">Начать</button>
+                </div>
+            </div>
+
+            <div class="card p-6 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-start mb-4">
+                        <span class="text-3xl">🔨</span>
+                        <span class="badge-green">Новичок</span>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Собери слово</h3>
+                    <p class="text-sm text-gray-400">Собери слово из перемешанных букв</p>
+                </div>
+                <div>
+                    <div class="text-xs text-blue-400 mt-4">👤 40 очков</div>
+                    <button class="btn-purple">Начать</button>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
 </body>
 </html>
